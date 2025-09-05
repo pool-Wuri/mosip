@@ -22,6 +22,7 @@
       <span class="readOnly" *ngIf="readOnlyMode">( {{demographiclabels.read_only_message}} )</span>
       <hr />
       <div class="user_container_single_form" *ngIf="primaryuserForm">
+        
         <form [formGroup]="userForm" class="user__form">
           <!-- Create as rows as many as alignmentGroups in UI specs -->
           <span *ngFor="let alignmentGroup of alignmentGroups">

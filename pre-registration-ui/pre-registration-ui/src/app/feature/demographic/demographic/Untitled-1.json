@@ -1,0 +1,211 @@
+{
+    "identity": {
+        "identity": [
+            {
+                "id": "IDSchemaVersion",
+                "description": "ID Schema Version",
+                "type": "number",
+                "controlType": "textbox",
+                "fieldType": "default",
+                "inputRequired": false,
+                "validators": [],
+                "required": true
+            },
+            {
+                "id": "lastName",
+                "description": "Enter Last Name",
+                "labelName": {
+                    "eng": "Last Name",
+                    "fra": "Nom"
+                },
+                "controlType": "textbox",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "simpleType",
+                "validators": [
+                    {
+                        "type": "regex",
+                        "validator": "^(?=.{1,100}$).*",
+                        "arguments": []
+                    }
+                ],
+                "required": true,
+                "transliteration": true
+            },
+            {
+                "id": "firstName",
+                "description": "Enter First Name",
+                "labelName": {
+                    "eng": "First Name",
+                    "fra": "Prénom"
+                },
+                "controlType": "textbox",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "simpleType",
+                "validators": [
+                    {
+                        "type": "regex",
+                        "validator": "^(?=.{1,100}$).*",
+                        "arguments": []
+                    }
+                ],
+                "required": true,
+                "transliteration": true
+            },
+            {
+                "id": "dateOfBirth",
+                "description": "Enter Date of Birth",
+                "labelName": {
+                    "eng": "Date of Birth",
+                    "fra": "Date de naissance"
+                },
+                "controlType": "ageDate",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "string",
+                "validators": [
+                    {
+                        "type": "regex",
+                        "validator": "^(19[0-9]{2}|20[0-9]{2}|21[0-9]{2}|2200)/(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])$",
+                        "arguments": []
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "gender",
+                "description": "Select Gender",
+                "labelName": {
+                    "eng": "Gender",
+                    "fra": "Genre"
+                },
+                "controlType": "dropdown",
+                "inputRequired": true,
+                "fieldType": "dynamic",
+                "subType": "gender",
+                "type": "simpleType",
+                "validators": [],
+                "required": true
+            },
+            {
+                "id": "phoneNumber",
+                "description": "Enter Phone Number",
+                "labelName": {
+                    "eng": "Phone Number",
+                    "fra": "Numéro de téléphone"
+                },
+                "controlType": "textbox",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "string",
+                "validators": [
+                    {
+                        "type": "regex",
+                        "validator": "^(\\+|00)?[1-9][0-9]{7,14}$",
+                        "arguments": []
+                    }
+                ],
+                "required": false
+            },
+            {
+                "id": "email",
+                "description": "Enter Email",
+                "labelName": {
+                    "eng": "Email",
+                    "fra": "Courriel"
+                },
+                "controlType": "textbox",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "string",
+                "validators": [
+                    {
+                        "type": "regex",
+                        "validator": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+                        "arguments": []
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "region",
+                "description": "Region of Birth",
+                "labelName": {
+                    "eng": "Region of Birth",
+                    "fra": "Région de naissance"
+                },
+                "controlType": "dropdown",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "simpleType",
+                "validators": [],
+                "locationHierarchyLevel": 1,
+                "required": true
+            },
+            {
+                "id": "province",
+                "description": "Enter Province of Birth",
+                "labelName": {
+                    "eng": "Province of Birth",
+                    "fra": "Province de naissance"
+                },
+                "controlType": "dropdown",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "simpleType",
+                "validators": [],
+                "locationHierarchyLevel": 2,
+                "required": true
+            },
+            {
+                "id": "placeOfBirth",
+                "description": "Enter Place of Birth",
+                "labelName": {
+                    "eng": "Place of Birth",
+                    "fra": "Lieu de naissance"
+                },
+                "controlType": "dropdown",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "simpleType",
+                "validators": [],
+                "subType": "department",
+                "locationHierarchyLevel": 3,
+                "required": true
+            },
+            {
+                "id": "nationality",
+                "description": "Select Nationality",
+                "labelName": {
+                    "eng": "Nationality",
+                    "fra": "Nationalité"
+                },
+                "controlType": "textbox",
+                "inputRequired": true,
+                "fieldType": "default",
+                "type": "simpleType",
+                "validators": [],
+                "required": false
+            },
+            {
+                "id": "proofOfIdentity",
+                "description": "Upload Identity Proof",
+                "labelName": {
+                    "eng": "Identity Proof",
+                    "fra": "Preuve d’identité"
+                },
+                "controlType": "fileupload",
+                "inputRequired": true,
+                "subType": "POI",
+                "validators": [],
+                "required": false
+            }
+        ],
+        "locationHierarchy": [
+            "region",
+            "province",
+            "placeOfBirth"
+        ]
+    }
+}
